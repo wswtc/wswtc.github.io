@@ -62,5 +62,14 @@
             }
         }
     </script>
+    <script>
+        fetch('example.md')
+      .then(response => response.text())
+      .then(markdown => {
+        const html = marked(markdown);
+        const markdownElement = document.getElementById('markdown');
+        markdownElement.innerHTML = html;
+      });
+      </script>
 </body>
 </html>
